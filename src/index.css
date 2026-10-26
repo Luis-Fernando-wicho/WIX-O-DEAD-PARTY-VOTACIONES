@@ -1,0 +1,122 @@
+@import url("https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap");
+
+:root {
+  --bg-color: #000000;
+  --neon-green: #39ff14;
+  --neon-glow:
+    0 0 10px rgba(57, 255, 20, 0.4), inset 0 0 10px rgba(57, 255, 20, 0.2);
+  --neon-border: 2px solid #39ff14;
+  --card-bg: #0a0a0a;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Share Tech Mono", monospace;
+  color: var(--neon-green);
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--neon-green);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-x: hidden;
+}
+
+#root {
+  width: 100%;
+  max-width: 480px;
+  height: 100dvh; /* Cambiado de min-height a height fija */
+  background-color: var(--bg-color);
+  border-left: 1px solid #111;
+  border-right: 1px solid #111;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden; /* Bloquea el scroll en la pantalla inicial */
+}
+
+/* Encabezado común estilo WiX-O */
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  border-bottom: 2px solid var(--neon-green);
+  background-color: #050505;
+}
+
+.logo-wixo {
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1.2rem;
+  text-shadow: var(--neon-glow);
+}
+
+.event-title {
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+}
+
+.cube-icon {
+  font-size: 1.2rem;
+}
+
+/* Botones y Controles Neón */
+.neon-btn {
+  background-color: var(--neon-green);
+  color: #000;
+  font-weight: bold;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  text-transform: uppercase;
+  box-shadow: 0 0 15px rgba(57, 255, 20, 0.6);
+  transition: 0.2s ease;
+  width: 100%;
+  text-align: center;
+}
+
+.neon-btn:hover {
+  background-color: #2eb810;
+  box-shadow: 0 0 25px rgba(57, 255, 20, 0.9);
+}
+
+.neon-input {
+  background-color: #000;
+  border: var(--neon-border);
+  color: var(--neon-green);
+  padding: 12px;
+  border-radius: 6px;
+  text-align: center;
+  font-size: 1.1rem;
+  width: 100%;
+  outline: none;
+  box-shadow: var(--neon-glow);
+}
+
+.neon-input::placeholder {
+  color: rgba(57, 255, 20, 0.4);
+}
+
+/* Contenedores de tarjetas */
+.neon-card {
+  border: var(--neon-border);
+  background-color: var(--card-bg);
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: var(--neon-glow);
+  text-align: center;
+}
+.main-layout {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  flex: 1;
+}

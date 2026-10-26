@@ -1,0 +1,176 @@
+.voting-container {
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+  background-color: #000000;
+  flex: 1;
+  height: 100dvh;
+  align-items: center;
+  justify-content: space-between;
+  overflow: hidden; /* Evita cualquier scroll general en toda la pantalla */
+}
+
+.test-mode-bar {
+  font-size: 0.75rem;
+  color: #888;
+  margin-bottom: 10px;
+}
+
+.test-mode-bar input {
+  margin-right: 5px;
+}
+
+.voting-tabs {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 15px;
+  width: 100%;
+}
+
+/* Contenedor envolvente para crear el efecto de difuminado superior e inferior */
+.cards-scroll-wrapper {
+  position: relative;
+  width: 100%;
+  max-height: 420px;
+  /* Máscara de desvanecimiento CSS para arriba y abajo */
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    transparent 0%,
+    black 15%,
+    black 85%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    to bottom,
+    transparent 0%,
+    black 15%,
+    black 85%,
+    transparent 100%
+  );
+}
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 12px;
+  width: 100%;
+  max-height: 420px;
+  overflow-y: auto;
+  padding: 15px 5px; /* Padding vertical para que el difuminado no corte las tarjetas de los extremos */
+}
+
+.voting-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.voting-card:hover {
+  transform: scale(1.03);
+}
+
+.card-photo-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 3/4;
+  border: 2px solid #39ff14;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 0 8px rgba(57, 255, 20, 0.3);
+  background-color: #080808;
+}
+
+.card-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.voting-card.selected .card-photo-wrapper {
+  border-color: #ffffff;
+  box-shadow:
+    0 0 18px #39ff14,
+    inset 0 0 10px #39ff14;
+}
+
+.rank-badge {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: #39ff14;
+  color: #000000;
+  font-weight: bold;
+  font-size: 0.75rem;
+  text-align: center;
+  padding: 4px 0;
+  text-transform: uppercase;
+}
+
+.card-name {
+  color: #ffffff;
+  font-size: 0.85rem;
+  margin-top: 6px;
+  text-align: center;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.voting-submit-btn {
+  width: 100%;
+  max-width: 280px;
+  background-color: #39ff14;
+  color: #000000;
+  font-weight: bold;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 20px;
+  padding: 12px;
+  margin-top: 15px;
+  cursor: pointer;
+  box-shadow: 0 0 15px rgba(57, 255, 20, 0.6);
+  text-transform: uppercase;
+}
+
+.voting-submit-btn:disabled {
+  background-color: #224422;
+  color: #666;
+  box-shadow: none;
+  cursor: not-allowed;
+}
+
+.locked-box,
+.already-voted-box {
+  border: 2px solid #39ff14;
+  border-radius: 12px;
+  padding: 30px 20px;
+  text-align: center;
+  margin: 40px 0;
+  box-shadow: 0 0 10px rgba(57, 255, 20, 0.3);
+}
+
+.locked-box h3 {
+  color: #39ff14;
+  margin-top: 10px;
+  font-size: 1.3rem;
+}
+
+.exit-btn {
+  background: transparent;
+  border: none;
+  color: #39ff14;
+  margin-top: 15px;
+  cursor: pointer;
+  text-decoration: underline;
+  font-size: 0.85rem;
+}
+
+.voting-loading {
+  color: #39ff14;
+  text-align: center;
+  padding: 50px;
+}
